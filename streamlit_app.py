@@ -25,7 +25,6 @@ driver = webdriver.Firefox(
     options=firefoxOptions,
     service=service,
 )
-driver.get(URL)
 
 
 try:
