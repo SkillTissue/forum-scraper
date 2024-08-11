@@ -17,7 +17,6 @@ with st.echo():
     from webdriver_manager.chrome import ChromeDriverManager
     from webdriver_manager.core.os_manager import ChromeType
 
-    from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
     @st.cache_resource
     def get_driver():
@@ -34,8 +33,6 @@ with st.echo():
     options.add_argument('--disable-blink-features=AutomationControlled')
 
     driver = get_driver()
-
-    st.write("We got here...")
 
     driver.get("https://www.google.com")
     st.write("Google loaded successfully.")
