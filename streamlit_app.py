@@ -33,7 +33,7 @@ with st.echo():
     options.add_argument('--disable-blink-features=AutomationControlled')
 
     driver = get_driver()
-
+    st.write("Driver loaded")
     driver.get("https://www.google.com")
     st.write("Google loaded successfully.")
     try:
