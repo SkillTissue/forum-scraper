@@ -35,6 +35,8 @@ with st.echo():
 
     st.write("We got here...")
 
+    driver.get("https://www.google.com")
+    st.write("Google loaded successfully.")
     try:
         driver.get("https://hypixel.net/online")
         print ("We got past loading!")
