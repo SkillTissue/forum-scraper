@@ -18,6 +18,8 @@ from webdriver_manager.firefox import GeckoDriverManager
 import time
 from datetime import datetime
 
+print ("We've launched")
+
 firefoxOptions = Options()
 firefoxOptions.add_argument("--headless")
 service = Service(GeckoDriverManager().install())
