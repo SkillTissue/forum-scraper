@@ -10,6 +10,8 @@ from selenium.webdriver.common.by import By
 from datetime import datetime
 import time
 
+st.write("App open")
+
 def get_driver():
     return webdriver.Chrome(
         service=Service(
@@ -24,6 +26,8 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 driver = get_driver()
+
+st.write("Driver intialized")
 
 try:
     driver.get("https://hypixel.net/online")
