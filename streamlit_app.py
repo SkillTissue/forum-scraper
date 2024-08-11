@@ -18,15 +18,16 @@ from webdriver_manager.firefox import GeckoDriverManager
 import time
 from datetime import datetime
 
-print ("We've launched")
+def installff():
+  os.system('sbase install geckodriver')
+  os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
 
-firefoxOptions = Options()
-firefoxOptions.add_argument("--headless")
-service = Service(GeckoDriverManager().install())
-driver = webdriver.Firefox(
-    options=firefoxOptions,
-    service=service,
-)
+_ = installff()
+from selenium import webdriver
+from selenium.webdriver import FirefoxOptions
+opts = FirefoxOptions()
+opts.add_argument("--headless")
+browser = webdriver.Firefox(options=opts)
 
 
 try:
