@@ -16,14 +16,6 @@ options.add_argument('--headless')
 
 driver = get_driver()
 
-firefoxOptions = Options()
-firefoxOptions.add_argument("--headless")
-service = Service(GeckoDriverManager().install())
-driver = webdriver.Firefox(
-    options=firefoxOptions,
-    service=service,
-)
-
 
 try:
     driver.get("https://hypixel.net/online")
