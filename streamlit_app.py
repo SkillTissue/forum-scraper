@@ -31,6 +31,7 @@ driver = get_driver()
 st.write("Driver intialized")
 
 try:
+    st.write("trying hypixel")
     driver.get("https://hypixel.net/online")
     st.write("We got hypixel")
 
