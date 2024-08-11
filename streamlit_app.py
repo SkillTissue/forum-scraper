@@ -6,7 +6,6 @@ from webdriver_manager.core.os_manager import ChromeType
 import datetime
 import time
 
-@st.cache_resource
 def get_driver():
     return webdriver.Chrome(
         service=Service(
