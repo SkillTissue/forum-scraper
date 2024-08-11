@@ -33,7 +33,7 @@ with st.echo():
 
     driver = get_driver()
 
-    print ("We got here...")
+    st.write("We got here...")
 
     if True:
         driver.get("https://hypixel.net/online")
