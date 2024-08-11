@@ -86,4 +86,4 @@ with st.echo():
     
                 time.sleep(5)
     finally:
-        driver.close()
+        st.write("Exception happened...")
