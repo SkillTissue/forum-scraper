@@ -33,9 +33,11 @@ with st.echo():
 
     driver = get_driver()
 
+    print ("We got here...")
 
     if True:
         driver.get("https://hypixel.net/online")
+        print ("We got past loading!")
     
         try:
             accept_cookies_button = WebDriverWait(driver, 10).until(
