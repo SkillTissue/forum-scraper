@@ -32,6 +32,7 @@ st.write("Driver intialized")
 
 try:
     driver.get("https://hypixel.net/online")
+    st.write("We got hypixel")
 
     try:
         accept_cookies_button = WebDriverWait(driver, 10).until(
