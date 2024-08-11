@@ -30,7 +30,6 @@ with st.echo():
     options = Options()
     options.add_argument("--disable-gpu")
     options.add_argument("--headless")
-    options.add_argument('--disable-blink-features=AutomationControlled')
 
     driver = get_driver()
     st.write("Driver loaded")
