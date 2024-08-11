@@ -34,7 +34,7 @@ with st.echo():
     driver = get_driver()
 
 
-    try:
+    if True:
         driver.get("https://hypixel.net/online")
     
         try:
@@ -83,6 +83,3 @@ with st.echo():
                     print(f"sad error: {e}")
     
                 time.sleep(5)
-    
-    finally:
-        driver.quit()
