@@ -35,7 +35,7 @@ with st.echo():
 
     st.write("We got here...")
 
-    if True:
+    try:
         driver.get("https://hypixel.net/online")
         print ("We got past loading!")
     
@@ -85,3 +85,5 @@ with st.echo():
                     print(f"sad error: {e}")
     
                 time.sleep(5)
+    finally:
+        driver.close()
