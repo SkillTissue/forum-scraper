@@ -69,6 +69,7 @@ try:
                 file.write(f"{current_time}: {element.text}\n")
                 file.flush()
                 print(f"{current_time}: {element.text}")
+                st.write(f"{current_time}: {element.text}")
 
             except Exception as e:
                 print(f"sad error: {e}")
