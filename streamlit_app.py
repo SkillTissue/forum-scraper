@@ -17,6 +17,14 @@ with st.echo():
     from webdriver_manager.chrome import ChromeDriverManager
     from webdriver_manager.core.os_manager import ChromeType
 
+    from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+    capabilities = DesiredCapabilities.CHROME.copy()
+    capabilities['timeouts'] = {
+        'implicit': 10,  # seconds
+        'pageLoad': 30,  # seconds
+        'script': 30,    # seconds
+    }
     @st.cache_resource
     def get_driver():
         return webdriver.Chrome(
@@ -24,12 +32,14 @@ with st.echo():
                 ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
             ),
             options=options,
+            desired_capabilities=capabilities
         )
 
     options = Options()
     options.add_argument("--disable-gpu")
     options.add_argument("--headless")
     options.add_argument('--disable-blink-features=AutomationControlled')
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
 
     driver = get_driver()
 
