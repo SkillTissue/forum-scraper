@@ -1,22 +1,20 @@
 import streamlit as st
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 from datetime import datetime
+
+def get_driver():
+    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+options = Options()
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
+
+driver = get_driver()
 
 firefoxOptions = Options()
 firefoxOptions.add_argument("--headless")
